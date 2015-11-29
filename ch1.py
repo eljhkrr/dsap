@@ -34,5 +34,8 @@ class TestCh1(unittest.TestCase):
         self.assertTrue(is_even(0))
         self.assertFalse(is_even(5))
 
+    def test_minmax(self):
+        self.assertEqual(minmax([1, 2, 3, 4]), (1, 4))
+
 if __name__ == '__main__':
     unittest.main()
