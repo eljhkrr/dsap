@@ -11,6 +11,15 @@ def is_even(k):
         k -= 2
     return True if k == 0 else False
 
+def minmax(data):
+    mn = mx = data[0]
+    for i in range(len(data)):
+        if data[i] > mx:
+            mx = data[i]
+        elif data[i] < mn:
+            mn = data[i]
+    return mn, mx
+
 class TestCh1(unittest.TestCase):
 
     def test_ismultiple(self):
