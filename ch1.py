@@ -56,5 +56,8 @@ class TestCh1(unittest.TestCase):
     def test_sumsqodd(self):
         self.assertEqual(sum_sqodd(6), 35)
 
+    def test_sumsqodd2(self):
+        self.assertEqual(sum_sqodd2(6), 35)
+
 if __name__ == '__main__':
     unittest.main()
