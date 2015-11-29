@@ -40,5 +40,8 @@ class TestCh1(unittest.TestCase):
     def test_minmax(self):
         self.assertEqual(minmax([1, 2, 3, 4]), (1, 4))
 
+    def test_sumn(self):
+        self.assertEqual(sumn(4), 6)
+
 if __name__ == '__main__':
     unittest.main()
