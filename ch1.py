@@ -23,6 +23,13 @@ def minmax(data):
 def sumn(n):
     return sum(range(n))
 
+def sum_sqodd(n):
+    sum = 0
+    for i in range(n):
+        if i%2 != 0:
+            sum += i*i
+    return sum            
+
 class TestCh1(unittest.TestCase):
 
     def test_ismultiple(self):
