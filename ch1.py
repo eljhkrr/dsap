@@ -20,6 +20,9 @@ def minmax(data):
             mn = data[i]
     return mn, mx
 
+def sumn(n):
+    return sum(range(n))
+
 class TestCh1(unittest.TestCase):
 
     def test_ismultiple(self):
