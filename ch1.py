@@ -37,6 +37,15 @@ def sum_sqodd2(n):
 def choice(data):
     return data[randrange(len(data))]
 
+def odd_product(sequence):
+    products = []
+    for i in range(len(sequence)):
+        for j in range(len(sequence)):
+            if i != j:
+                if sequence[i] * sequence[j] % 2 != 0:
+                    products.append((sequence[i], sequence[j]))
+    return set(products)
+
 class TestCh1(unittest.TestCase):
 
     def test_ismultiple(self):
