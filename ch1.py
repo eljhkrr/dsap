@@ -19,7 +19,11 @@ class TestCh1(unittest.TestCase):
         self.assertFalse(is_multiple(4, 2))
         with self.assertRaises(ZeroDivisionError):
             is_multiple(0, 10)
-            
+
+    def test_iseven(self):
+        self.assertTrue(is_even(4))
+        self.assertTrue(is_even(0))
+        self.assertFalse(is_even(5))
 
 if __name__ == '__main__':
     unittest.main()
