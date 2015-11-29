@@ -67,5 +67,9 @@ class TestCh1(unittest.TestCase):
         str = "abcdefgh"
         self.assertEqual(str[4], str[4 - len(str)])
 
+    def test_choice(self):
+        data = [1, 2, 3, 4, 5, 6, 7]
+        self.assertIn(choice(data), data)
+
 if __name__ == '__main__':
     unittest.main()
