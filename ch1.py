@@ -28,7 +28,10 @@ def sum_sqodd(n):
     for i in range(n):
         if i%2 != 0:
             sum += i*i
-    return sum            
+    return sum
+
+def sum_sqodd2(n):
+    return sum(i*i for i in range(n) if i%2 != 0)
 
 class TestCh1(unittest.TestCase):
 
