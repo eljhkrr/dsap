@@ -1,4 +1,5 @@
 import unittest
+from random import randrange
 
 def is_multiple(n, m):
     if m % n == 0:
@@ -32,6 +33,9 @@ def sum_sqodd(n):
 
 def sum_sqodd2(n):
     return sum(i*i for i in range(n) if i%2 != 0)
+
+def choice(data):
+    return data[randrange(len(data))]
 
 class TestCh1(unittest.TestCase):
 
