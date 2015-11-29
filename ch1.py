@@ -6,6 +6,11 @@ def is_multiple(n, m):
     else:
         return False
 
+def is_even(k):
+    while k > 0:
+        k -= 2
+    return True if k == 0 else False
+
 class TestCh1(unittest.TestCase):
 
     def test_ismultiple(self):
@@ -14,6 +19,7 @@ class TestCh1(unittest.TestCase):
         self.assertFalse(is_multiple(4, 2))
         with self.assertRaises(ZeroDivisionError):
             is_multiple(0, 10)
+            
 
 if __name__ == '__main__':
     unittest.main()
