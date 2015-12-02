@@ -45,7 +45,7 @@ class CreditCard:
         try:
             price = float(price)
         except ValueError as e:
-            raise
+            raise ValueError("Charge must be a number") from e
         else:
             if price + self._balance > self._limit: # if charge would exceed limit,
                 return False # cannot accept charge
@@ -57,8 +57,8 @@ class CreditCard:
         """Process customer payment that reduces balance."""
         try:
             amount = float(amount)
-        except ValueError:
-            raise
+        except ValueError as e:
+            raise ValueError("Amount must be a number") from e
         else:
             pass
         if amount < 0:
