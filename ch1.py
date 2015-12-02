@@ -44,7 +44,7 @@ def odd_product(sequence):
             if i != j:
                 if sequence[i] * sequence[j] % 2 != 0:
                     products.append((sequence[i], sequence[j]))
-    return set(products)
+    return products
 
 class TestCh1(unittest.TestCase):
 
