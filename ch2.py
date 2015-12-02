@@ -1,3 +1,5 @@
+import unittest
+
 class Flower:
 
     def __init__(self, name, petals, price):
@@ -22,3 +24,19 @@ class Flower:
 
     def set_price(self, price):
         self._price = price
+
+class TestCh2(unittest.TestCase):
+
+    f = Flower("rose", 6, 100)
+
+    def test_name(self):
+        self.assertEqual(self.f.get_name(), "rose")
+
+    def test_petals(self):
+        self.assertEqual(self.f.get_petals(), 6)
+
+    def test_price(self):
+        self.assertEqual(self.f.get_price(), 100)
+
+if __name__ == '__main__':
+    unittest.main()
