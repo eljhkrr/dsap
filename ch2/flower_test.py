@@ -3,7 +3,8 @@ import unittest
 
 class TestFlower(unittest.TestCase):
 
-    f = Flower("rose", 6, 100)
+    def setUp(self):
+        self.f = Flower("rose", 6, 100)
 
     def test_name(self):
         self.assertEqual(self.f.get_name(), "rose")
