@@ -1,7 +1,7 @@
 class CreditCard:
     """A consumer credit card."""
 
-    def init (self, customer, bank, acnt, limit):
+    def __init__(self, customer, bank, acnt, limit):
         """Create a new credit card instance.
 
         The initial balance is zero.
@@ -45,7 +45,7 @@ class CreditCard:
         try:
             price = float(price)
         except ValueError:
-            raise ValueError("price must be a number")
+            raise ValueError("Price must be a number")
         else:
             if price + self._balance > self._limit: # if charge would exceed limit,
                 return False # cannot accept charge
