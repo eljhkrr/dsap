@@ -60,4 +60,8 @@ class CreditCard:
         except ValueError:
             raise
         else:
+            pass
+        if amount < 0:
+            raise ValueError("Amount must be positive")
+        else:
             self._balance -= amount
