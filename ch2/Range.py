@@ -1,4 +1,6 @@
-class Range:
+import collections
+
+class Range(collections.Sequence):
     """A class that mimics the built-in range class."""
 
     def __init__(self, start, stop=None, step=1):
