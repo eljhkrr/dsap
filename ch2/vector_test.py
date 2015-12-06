@@ -4,56 +4,46 @@ from vector import Vector
 class TestVetor(unittest.TestCase):
 
     def setUp(self):
-        self.v = Vector(5)
+        self.v = Vector(coords=[1, 2, 3, 4, 5])
+        self.u = Vector(coords=[6, 7, 8, 9, 10])
 
     def test_len(self):
         self.assertEqual(len(self.v), 5)
+        self.assertEqual(len(self.v), 5)
 
     def test_setget_item(self):
+        self.assertEqual(self.v[0], 1)
+        self.assertEqual(self.u[0], 6)
         self.v[1] = 20
         self.assertEqual(self.v[1], 20)
-        self.v[3] = 40
-        self.assertEqual(self.v[3], 40)
+        self.u[3] = 40
+        self.assertEqual(self.u[3], 40)
 
     def test_add(self):
-        self.v[0] = 45
-        self.v[4] = 32
-        u = Vector(5)
-        u[0] = 12
-        u[1] = 76
-        result = self.v + u
-        self.assertEqual(str(result), "<57, 76, 0, 0, 32>")
+        result = self.v + self.u
+        self.assertEqual(str(result), "<7, 9, 11, 13, 15>")
 
     def test_sub(self):
-        u = Vector(5)
-        u[0] = 23
-        u[3] = 43
-        result = self.v - u
-        self.assertEqual(str(result), "<-23, 0, 0, -43, 0>")
+        result = self.v - self.u
+        self.assertEqual(str(result), "<-5, -5, -5, -5, -5>")
+        result = self.u - self.v
+        self.assertEqual(str(result), "<5, 5, 5, 5, 5>")
 
     def test_str(self):
-        self.assertEqual(str(self.v), "<0, 0, 0, 0, 0>")
+        self.assertEqual(str(self.v), "<1, 2, 3, 4, 5>")
+        self.assertEqual(str(self.u), "<6, 7, 8, 9, 10>")
 
     def test_neg(self):
-        self.v[1] = 23
-        self.v[2] = 12
-        self.assertEqual(str(-self.v), "<0, -23, -12, 0, 0>")
+        self.assertEqual(str(-self.v), "<-1, -2, -3, -4, -5>")
+        self.assertEqual(str(-self.u), "<-6, -7, -8, -9, -10>")
 
     def test_mul(self):
-        self.v[1] = 23
-        self.v[2] = 12
-        u = self.v * 4
-        self.assertEqual(str(u), "<0, 92, 48, 0, 0>")
+        # scalar multiplication
+        result = self.v * 4
+        self.assertEqual(str(result), "<4, 8, 12, 16, 20>")
         # test dot product
-        u = Vector(3)
-        u[0] = 2
-        u[1] = 4
-        u[2] = 6
-        v = Vector(3)
-        v[0] = 6
-        v[1] = 9
-        v[2] = 10
-        self.assertEqual(u * v, 108)
+        result = self.u * self.v
+        self.assertEqual(result, 130)
 
 if __name__ == "__main__":
     unittest.main()
