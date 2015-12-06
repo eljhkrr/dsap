@@ -4,8 +4,8 @@ from vector import Vector
 class TestVetor(unittest.TestCase):
 
     def setUp(self):
-        self.v = Vector(coords=[1, 2, 3, 4, 5])
-        self.u = Vector(coords=[6, 7, 8, 9, 10])
+        self.v = Vector([1, 2, 3, 4, 5])
+        self.u = Vector([6, 7, 8, 9, 10])
 
     def test_len(self):
         self.assertEqual(len(self.v), 5)
