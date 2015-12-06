@@ -27,7 +27,7 @@ class Vector:
     return result
 
   def __radd__(self, other):
-    """Add a sequence to the vector."""
+    """Add a sequence to a vector instance."""
     self.__add__(self, other)
 
   def __sub__(self, other):
@@ -51,7 +51,7 @@ class Vector:
     result = Vector(len(self))
     for i in range(len(self)):
       result[i] = factor * self[i]
-    return result    
+    return result  
 
   def __eq__(self, other):
     """Return True if vector has same coordinates as other."""

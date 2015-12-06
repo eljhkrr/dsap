@@ -38,7 +38,12 @@ class TestVetor(unittest.TestCase):
         self.v[1] = 23
         self.v[2] = 12
         self.assertEqual(str(-self.v), "<0, -23, -12, 0, 0>")
-        
+
+    def test_mul(self):
+        self.v[1] = 23
+        self.v[2] = 12
+        u = self.v * 4
+        self.assertEqual(str(u), "<0, 92, 48, 0, 0>")
 
 if __name__ == "__main__":
     unittest.main()
