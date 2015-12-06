@@ -33,6 +33,11 @@ class TestVetor(unittest.TestCase):
 
     def test_str(self):
         self.assertEqual(str(self.v), "<0, 0, 0, 0, 0>")
+
+    def test_neg(self):
+        self.v[1] = 23
+        self.v[2] = 12
+        self.assertEqual(str(-self.v), "<0, -23, -12, 0, 0>")
         
 
 if __name__ == "__main__":
