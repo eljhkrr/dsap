@@ -26,6 +26,10 @@ class Vector:
       result[j] = self[j] + other[j]
     return result
 
+  def __radd__(self, other):
+    """Add a sequence to the vector."""
+    self.__add__(self, other)
+
   def __sub__(self, other):
     """Return the difference of two vectors."""
     if len(self) != len(other):
@@ -41,7 +45,13 @@ class Vector:
     for i in range(len(self)):
       result[i] = -1 * self[i]
     return result
-    
+
+  def __mul__(self, factor):
+    """Return the product of a vector and a scalar."""
+    result = Vector(len(self))
+    for i in range(len(self)):
+      result[i] = factor * self[i]
+    return result    
 
   def __eq__(self, other):
     """Return True if vector has same coordinates as other."""
