@@ -48,9 +48,20 @@ class Vector:
 
   def __mul__(self, factor):
     """Return the product of a vector * scalar."""
-    result = Vector(len(self))
-    for i in range(len(self)):
-      result[i] = factor * self[i]
+    if isinstance(factor, (int, float)):
+      # scalar product
+      result = Vector(len(self))
+      for i in range(len(self)):
+        result[i] = factor * self[i]
+    elif isinstance(factor, Vector):
+      # dot product
+      # TODO: try with map
+      sum = 0
+      for i in range(len(self)):
+        sum += self[i] * factor[i]
+      result = sum
+    else:
+      raise TypeError
     return result
 
   def __rmul__(self, factor):
