@@ -26,6 +26,15 @@ class Vector:
       result[j] = self[j] + other[j]
     return result
 
+  def __sub__(self, other):
+    """Return the difference of two vectors."""
+    if len(self) != len(other):
+      raise ValueError("dimensions must agree")
+    result = Vector(len(self))
+    for j in range(len(self)):
+      result[j] = self[j] - other[j]
+    return result
+
   def __eq__(self, other):
     """Return True if vector has same coordinates as other."""
     return self._coords == other._coords

@@ -6,10 +6,10 @@ class CreditCard:
 
         The initial balance is zero.
 
-        customer the name of the customer (e.g., John Bowman )
-        bank the name of the bank (e.g., California Savings )
-        acnt the acount identifier (e.g., 5391 0375 9387 5309 )
-        limit credit limit (measured in dollars)
+        customer    the name of the customer (e.g., John Bowman )
+        bank        the name of the bank (e.g., California Savings )
+        acnt        the acount identifier (e.g., 5391 0375 9387 5309 )
+        limit       credit limit (measured in dollars)
         """
         self._customer = customer
         self._bank = bank
