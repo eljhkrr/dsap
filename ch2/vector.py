@@ -47,11 +47,15 @@ class Vector:
     return result
 
   def __mul__(self, factor):
-    """Return the product of a vector and a scalar."""
+    """Return the product of a vector * scalar."""
     result = Vector(len(self))
     for i in range(len(self)):
       result[i] = factor * self[i]
-    return result  
+    return result
+
+  def __rmul__(self, factor):
+    """Return the product of scalar * vector."""
+    return self.__mul__(factor)
 
   def __eq__(self, other):
     """Return True if vector has same coordinates as other."""
