@@ -35,6 +35,14 @@ class Vector:
       result[j] = self[j] - other[j]
     return result
 
+  def __neg__(self):
+    """Return a negated vector instance."""
+    result = Vector(len(self))
+    for i in range(len(self)):
+      result[i] = -1 * self[i]
+    return result
+    
+
   def __eq__(self, other):
     """Return True if vector has same coordinates as other."""
     return self._coords == other._coords
