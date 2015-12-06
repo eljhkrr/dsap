@@ -1,12 +1,13 @@
 class Vector:
   "Represents a row vector in a multidimensional space"
 
-  def __init__(self, d=1, coords=None):
+  def __init__(self, arg):
     """creates a d-dimensional vector of zeros or intialised with a sequence of coordinates."""
-    if not coords:
-      self._coords = [0] * d
-    elif all(isinstance(n, (int, float)) for n in coords):
-      self._coords = list(coords)
+    if isinstance(arg, int):
+      # create a d-dimensional vector of zeros
+      self._coords = [0] * arg
+    elif all(isinstance(n, (int, float)) for n in arg):
+      self._coords = list(arg)
     else:
       raise TypeError
 
