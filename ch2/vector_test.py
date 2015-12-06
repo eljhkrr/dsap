@@ -44,6 +44,16 @@ class TestVetor(unittest.TestCase):
         self.v[2] = 12
         u = self.v * 4
         self.assertEqual(str(u), "<0, 92, 48, 0, 0>")
+        # test dot product
+        u = Vector(3)
+        u[0] = 2
+        u[1] = 4
+        u[2] = 6
+        v = Vector(3)
+        v[0] = 6
+        v[1] = 9
+        v[2] = 10
+        self.assertEqual(u * v, 108)
 
 if __name__ == "__main__":
     unittest.main()
