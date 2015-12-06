@@ -28,7 +28,7 @@ class Vector:
 
   def __radd__(self, other):
     """Add a sequence to a vector instance."""
-    self.__add__(self, other)
+    return self.__add__(other)
 
   def __sub__(self, other):
     """Return the difference of two vectors."""
