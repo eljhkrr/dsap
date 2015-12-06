@@ -24,6 +24,13 @@ class TestVetor(unittest.TestCase):
         result = self.v + u
         self.assertEqual(str(result), "<57, 76, 0, 0, 32>")
 
+    def test_sub(self):
+        u = Vector(5)
+        u[0] = 23
+        u[3] = 43
+        result = self.v - u
+        self.assertEqual(str(result), "<-23, 0, 0, -43, 0>")
+
     def test_str(self):
         self.assertEqual(str(self.v), "<0, 0, 0, 0, 0>")
         
