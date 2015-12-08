@@ -15,3 +15,7 @@ class FibonacciProgression(Progression):
     def _advance(self):
         """Update current value by taking sum of previous two."""
         self._prev, self._current = self._current, self._current + self._prev
+
+if __name__ == '__main__':
+     r = FibonacciProgression(2, 2)
+     r.print_progression(8)
