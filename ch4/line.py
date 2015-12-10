@@ -11,3 +11,11 @@ def draw_interval(center_length):
         draw_interval(center_length - 1)
         draw_line(center_length)
         draw_interval(center_length - 1)
+
+
+def draw_ruler(num_inches, major_length):
+    """Draw English ruler with given number of inches, major tick length."""
+    draw_line(major_length, '0')
+    for j in range(1, 1 + num_inches):
+        draw_interval(major_length - 1)
+        draw_line(major_length, str(j))
